@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+#处理中文代码问题
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+#配置jsp集成
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+#引入数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cmfz
+    username: root
+    password: root
+#注入mapper文件
+mybatis:
+  mapper-locations: com/hugo/mapper/*.xml
+  #为实体类设置别名
+  type-aliases-package: com.hugo.common.entity
+#开启前台热部署
+server:
+  jsp-servlet:
+    init-parameters:
+      development: true
+
+
+

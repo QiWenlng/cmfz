@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hugo.common.dao.MenuDao">
+    <resultMap id="menuResultMap" type="Menu">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="iconCls" column="iconCls"/>
+        <result property="href" column="href"/>
+
+        <collection property="children" ofType="Menu">
+            <id property="id" column="id1"/>
+            <result property="name" column="name1"/>
+            <result property="iconCls" column="iconCls1"/>
+            <result property="href" column="href1"/>
+        </collection>
+    </resultMap>
+
+    <!-- 查询所有 -->
+    <select id="queryAll" resultMap="menuResultMap">
+        select t1.id,t1.name,t1.iconCls,t1.href,
+          t2.id as id1,
+          t2.name as name1,
+          t2.iconCls as iconCls1,
+          t2.href as href1
+        from t_menu t1 left join t_menu t2
+        on t1.id = t2.parentId
+        where t1.parentId = ''
+    </select>
+
+
+</mapper>

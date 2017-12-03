@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <!--配置appender-->
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="logback">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>[%p][%d{yyyy-MM-dd HH:mm:ss}] %m %n</pattern>
+        </layout>
+    </appender>
+
+    <!--项目根日志-->
+    <root level="ERROR">
+        <appender-ref ref="logback"/>
+    </root>
+
+
+    <!--展示指定包中日志 jar包中一些包-->
+    <logger name="com.hugo.common.dao" level="DEBUG"/>
+
+
+</configuration>

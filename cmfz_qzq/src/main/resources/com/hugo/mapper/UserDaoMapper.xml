@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hugo.common.dao.UserDao">
+
+    <!-- 添加 -->
+    <insert id="save">
+        insert into t_user values(#{userId},#{phone},#{fname},#{name},#{sex},#{address},#{signature},#{guruId},#{password},#{salt},#{imageUrl},#{userStatus})
+    </insert>
+
+    <!-- 修改头像 -->
+    <update id="saveUserImage">
+        update t_user set imageUrl=#{imageUrl}
+        where userId=#{userId}
+    </update>
+
+    <!-- 删除 -->
+    <delete id="remove">
+        delete from t_user where userId=#{id}
+    </delete>
+
+    <!-- 修改 -->
+    <update id="modify">
+        update t_user set fname=#{fname},name=#{name},sex=#{sex},address=#{address},
+        signature=#{signature},guruId=#{guruId},password=#{password},salt=#{salt}
+        where userId=#{userId}
+    </update>
+
+    <!-- 查询单个 -->
+    <select id="queryByName" resultType="User">
+        select * from t_user where name=#{name}
+    </select>
+
+    <!-- 查询单个 -->
+    <select id="queryOne" resultType="User">
+        select * from t_user where userId=#{id}
+    </select>
+
+    <!-- 查询单个 -->
+    <select id="queryOneByPhone" resultType="User">
+        select * from t_user where phone=#{phone}
+    </select>
+
+    <!-- 查询所有 -->
+    <select id="queryAll" resultType="User">
+        select * from t_user limit #{begin},#{rows}
+    </select>
+
+    <!-- 查询所有 -->
+    <select id="queryUser" resultType="User">
+        select * from t_user where guruId=#{guruId}
+    </select>
+
+    <!--查询总行数-->
+    <select id="count" resultType="java.lang.Integer">
+        select count(*) from t_user
+    </select>
+
+</mapper>
