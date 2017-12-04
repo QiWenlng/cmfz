@@ -1,6 +1,8 @@
 package com.hugo.common.entity;
 
-public class Homework {
+import java.io.Serializable;
+
+public class Homework implements Serializable {
     private String hwId;
     private String hwName;
     private String hwStatus;

@@ -45,7 +45,7 @@ public class HomeworkController {
     @Scheduled(cron = "* * 21 * * ?")
     public void export(HttpServletRequest request) throws Exception {
         List<Homework> homeworks = homeworkService.query();
-        String realPath = request.getRealPath("/upload/export");
+        String realPath = request.getSession().getServletContext().getRealPath("/upload/export");
         PoiUtil.exportExcel(Homework.class, homeworks, realPath + "\\homework.xlsx");
     }
 

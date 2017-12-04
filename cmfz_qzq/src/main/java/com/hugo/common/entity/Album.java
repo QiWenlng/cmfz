@@ -1,8 +1,9 @@
 package com.hugo.common.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Album {
+public class Album implements Serializable {
     private String albumId;
     private String albumName;
     private String author;

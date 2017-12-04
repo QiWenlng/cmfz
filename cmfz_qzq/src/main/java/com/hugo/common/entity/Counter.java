@@ -1,8 +1,9 @@
 package com.hugo.common.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Counter {
+public class Counter implements Serializable {
     private String counterId;
     private String hwId;
     private String userId;

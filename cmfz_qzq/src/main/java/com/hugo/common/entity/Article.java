@@ -1,8 +1,9 @@
 package com.hugo.common.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Article {
+public class Article implements Serializable {
     private String articleId;
     private String guruId;
     private Date publishDate;

@@ -1,8 +1,9 @@
 package com.hugo.common.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Paging<T> {
+public class Paging<T> implements Serializable {
 
     private Integer total;//总行数
     private List<T> rows;

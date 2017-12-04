@@ -23,6 +23,9 @@ mybatis:
   mapper-locations: com/hugo/mapper/*.xml
   #为实体类设置别名
   type-aliases-package: com.hugo.common.entity
+#开启MyBatis的二级缓存
+  configuration:
+    cache-enabled: true
 #开启前台热部署
 server:
   jsp-servlet:

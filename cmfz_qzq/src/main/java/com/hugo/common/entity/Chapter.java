@@ -1,6 +1,8 @@
 package com.hugo.common.entity;
 
-public class Chapter {
+import java.io.Serializable;
+
+public class Chapter implements Serializable {
     private String chapterId;
     private String chapterCode;
     private Integer chapterSize;

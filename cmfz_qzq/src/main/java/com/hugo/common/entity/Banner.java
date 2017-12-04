@@ -1,8 +1,9 @@
 package com.hugo.common.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Banner {
+public class Banner implements Serializable {
     private String id;
     private String imageUrl;
     private String imageName;

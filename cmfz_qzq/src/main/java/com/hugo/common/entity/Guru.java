@@ -1,6 +1,8 @@
 package com.hugo.common.entity;
 
-public class Guru {
+import java.io.Serializable;
+
+public class Guru implements Serializable {
     private String guruId;
     private String guruName;
     private String guruImageUrl;
