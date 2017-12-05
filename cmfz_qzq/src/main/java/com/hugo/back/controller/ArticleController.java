@@ -27,8 +27,8 @@ public class ArticleController {
 
     @RequestMapping("/remove")
     @ResponseBody
-    public Map<String, Object> remove(String id) {
-        return articleService.remove(id);
+    public Map<String, Object> remove(String articleId) {
+        return articleService.remove(articleId);
     }
 
     @RequestMapping("/modify")

@@ -120,10 +120,9 @@
         $.messager.confirm('提示', '确定要删除此文章吗？', function (result) {
             if (result) {
                 $.post('/cmfz/article/remove', {'articleId': articleId}, function (data) {
-                    var rr = eval("(" + data + ")");
                     $.messager.show({
                         title: '提示',
-                        msg: rr.msg,
+                        msg: data.msg,
                     });
 
                     //更新页面datagrid

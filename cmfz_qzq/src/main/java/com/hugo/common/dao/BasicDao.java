@@ -37,7 +37,7 @@ public interface BasicDao<T> {
      * @param id 当前查询的id
      * @return 根据id查询的对象
      */
-    @Cacheable(value = "baseCache", key = "#root.methodName")
+    //@Cacheable(value = "baseCache", key = "#root.methodName")
     public T queryOne(String id);
 
 

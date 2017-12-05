@@ -8,7 +8,7 @@ import java.util.Map;
 public interface ArticleService {
     public Map<String, Object> save(Article article);
 
-    public Map<String, Object> remove(String id);
+    public Map<String, Object> remove(String articleId);
 
     public Map<String, Object> modify(Article article);
 

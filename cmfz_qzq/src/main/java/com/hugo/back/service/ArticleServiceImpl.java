@@ -81,7 +81,7 @@ public class ArticleServiceImpl implements ArticleService {
         return map;
     }
 
-    @Cache
+
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
     public Article queryOne(String articleId) {

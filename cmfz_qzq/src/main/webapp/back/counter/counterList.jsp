@@ -104,10 +104,9 @@
         $.messager.confirm('提示', '确定要注销此计数器吗？', function (result) {
             if (result) {
                 $.post('/cmfz/counter/remove', {'counterId': counterId}, function (data) {
-                    var rr = eval("(" + data + ")");
                     $.messager.show({
                         title: '提示',
-                        msg: rr.msg,
+                        msg: data.msg,
                     });
 
                     //更新页面datagrid
