@@ -32,7 +32,7 @@
                     title: "头像", field: "guruImageUrl", width: 100, align: 'center', sortable: true,
                     //图片添加路径
                     formatter: function (value, row, index) {
-                        return "<img onclick=\"guruShowImage('" + row.guruImageUrl + "')\" src='" + row.guruImageUrl + "'/>";
+                        return "<img style='height: 100px;' onclick=\"guruShowImage('" + row.guruImageUrl + "')\" src='" + row.guruImageUrl + "'/>";
                     }
                 },
                 {title: "状态", field: "guruStatus", width: 120, align: 'center'},

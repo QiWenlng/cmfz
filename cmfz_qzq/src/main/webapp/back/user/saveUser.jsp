@@ -63,10 +63,10 @@
         </div>
         <div style="margin-top:20px;">
             <input class="easyui-textbox" name="code" data-options="required:true,prompt:'请输入验证码'"/><br/>
-            <img id="code" style="width: 100px; height: 30px;" src="/cmfz/admin/getImage"/>
+            <img id="userCode" style="width: 100px; height: 30px;" src="/cmfz/admin/getImage"/>
             <script type="text/javascript">
                 $(function () {
-                    $("#code").click(function () {
+                    $("#userCode").click(function () {
                         $(this).attr("src", "/cmfz/admin/getImage?time=(new Date()).getTime()");
                     });
                 });

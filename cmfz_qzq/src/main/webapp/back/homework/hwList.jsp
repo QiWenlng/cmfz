@@ -61,7 +61,7 @@
                 iconCls: 'icon-man',
                 //在设置为true的时候，选项卡面板将显示一个关闭按钮，在点击的时候会关闭选项卡面板。
                 closable: true,
-                href: '/cmfz/back/counter/counterList.jsp',
+                href: '/cmfz/back/counter/counterHwList.jsp',
                 tools: [{
                     iconCls: 'icon-reload',
                     handler: function () {

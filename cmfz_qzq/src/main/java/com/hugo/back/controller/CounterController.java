@@ -79,6 +79,16 @@ public class CounterController {
         return new Paging(count, counters);
     }
 
+    @RequestMapping("/query")
+    @ResponseBody
+    public Paging query(Integer rows, Integer page) {
+        //计算begin
+        Integer begin = (page - 1) * rows;
+        List<Counter> counters = counterService.query(begin, rows);
+        Integer count = counterService.countHw();
+        return new Paging(count, counters);
+    }
+
     @RequestMapping("/savehwId")
     @ResponseBody
     public String savehwId(String hwId, String phone) {

@@ -8,6 +8,16 @@ public class Homework implements Serializable {
     private String hwStatus;
     private String userId;
 
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Homework{" +

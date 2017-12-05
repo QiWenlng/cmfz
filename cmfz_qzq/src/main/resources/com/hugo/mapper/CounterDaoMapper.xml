@@ -26,18 +26,35 @@
     <!-- 查询所有 -->
     <select id="queryAll" resultType="Counter" parameterType="String">
         select * from t_counter
-        <if test="_parameter !=null and _parameter!='' ">
+        <!--<if test="_parameter !=null and _parameter!='' ">
             where hwId=#{hwId}
-        </if>
+        </if>-->
         limit #{begin},#{rows}
     </select>
 
     <!--查询总行数-->
     <select id="count" resultType="java.lang.Integer" parameterType="String">
         select count(*) from t_counter
-        <if test="_parameter !=null and _parameter!='' ">
+        <!--<if test="_parameter !=null and _parameter!='' ">
             where hwId=#{hwId}
-        </if>
+        </if>-->
+    </select>
+
+    <!-- 查询所有 -->
+    <select id="query" resultType="Counter">
+        select * from t_counter
+        <!--<if test="_parameter !=null and _parameter!='' ">
+            where hwId=#{hwId}
+        </if>-->
+        limit #{begin},#{rows}
+    </select>
+
+    <!--查询总行数-->
+    <select id="countHw" resultType="java.lang.Integer">
+        select count(*) from t_counter
+        <!--<if test="_parameter !=null and _parameter!='' ">
+            where hwId=#{hwId}
+        </if>-->
     </select>
 
 </mapper>

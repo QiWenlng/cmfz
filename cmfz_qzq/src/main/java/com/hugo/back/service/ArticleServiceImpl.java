@@ -3,6 +3,7 @@ package com.hugo.back.service;
 import com.hugo.common.annotations.Cache;
 import com.hugo.common.annotations.FlushCache;
 import com.hugo.common.dao.ArticleDao;
+import com.hugo.common.dao.ArticleLuceneDaoImpl;
 import com.hugo.common.entity.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,6 +23,10 @@ public class ArticleServiceImpl implements ArticleService {
     private ArticleDao articleDao;
 
     @Autowired
+    @Qualifier("articleLuceneDaoImpl")
+    private ArticleLuceneDaoImpl articleLuceneDaoImpl;
+
+    @Autowired
     private Jedis jedis;
 
 
@@ -35,6 +40,7 @@ public class ArticleServiceImpl implements ArticleService {
         article.setPublishDate(new Date());
         try {
             articleDao.save(article);
+            articleLuceneDaoImpl.addIndex(article);
             map.put("success", true);
             map.put("msg", "添加成功");
         } catch (Exception e) {
@@ -97,5 +103,13 @@ public class ArticleServiceImpl implements ArticleService {
     public Integer count() {
         Integer count = articleDao.count();
         return count;
+    }
+
+    //@Cache
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<Article> searcher(String attribute, String value) {
+        List<Article> articles = articleLuceneDaoImpl.queryAll(attribute, value);
+        return articles;
     }
 }

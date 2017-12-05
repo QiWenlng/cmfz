@@ -20,7 +20,7 @@
             },
             yAxis: {},
             series: [{
-                name: "集数",
+                name: "数量",
                 type: "bar",
                 data: data.chapterSum,
                 itemStyle: {

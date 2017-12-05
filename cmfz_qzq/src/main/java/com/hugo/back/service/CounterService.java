@@ -17,4 +17,8 @@ public interface CounterService {
     public List<Counter> queryAll(Integer begin, Integer rows, String hwId);
 
     public Integer count(String hwId);
+
+    public List<Counter> query(Integer begin, Integer rows);
+
+    public Integer countHw();
 }

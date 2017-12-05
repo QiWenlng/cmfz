@@ -34,7 +34,7 @@
                         return "<img style='height: 100px;width:100px' onclick=\"albumShowImage('" + row.imageUrl + "')\" src='" + row.imageUrl + "'/>";
                     }
                 },
-                {title: "专辑名称", field: "albumName", width: 120, align: 'center', sortable: true},
+                {title: "专辑名称", field: "albumName", width: 100, align: 'center', sortable: true},
                 {title: "章节数", field: "albumCount", width: 100, align: 'center', sortable: true},
                 {title: "作者", field: "author", width: 100, align: 'center', sortable: true},
                 {title: "播音者", field: "broadcastAuthor", width: 100, align: 'center', sortable: true},

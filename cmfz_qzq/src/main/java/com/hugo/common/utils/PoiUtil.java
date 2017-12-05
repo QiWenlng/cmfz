@@ -30,11 +30,12 @@ public class PoiUtil {
         //填充excel表格标题
 
         for (int i = 0; i < fields.length; i++) {
-            //获取单元格对象
-            HSSFCell cell = row.createCell(i);
-
-            //往单元格中填充 属性名称
-            cell.setCellValue(fields[i].getName());
+            if (fields[i] != null) {
+                //获取单元格对象
+                HSSFCell cell = row.createCell(i);
+                //往单元格中填充 属性名称
+                cell.setCellValue(fields[i].getName());
+            }
         }
 
         for (int i = 1; i <= data.size(); i++) {
@@ -79,9 +80,8 @@ public class PoiUtil {
 
         for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 
-            // 吧row对象转换成User对象
+            // 把row对象转换成实体对象
             HSSFRow row = sheet.getRow(i);
-
 
             Object object = clasz.newInstance();
 

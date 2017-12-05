@@ -97,4 +97,20 @@ public class CounterServiceImpl implements CounterService {
         Integer count = counterDao.count(hwId);
         return count;
     }
+
+    @Cache
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<Counter> query(Integer begin, Integer rows) {
+        List<Counter> counters = counterDao.query(begin, rows);
+        return counters;
+    }
+
+    @Cache
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public Integer countHw() {
+        Integer integer = counterDao.countHw();
+        return integer;
+    }
 }

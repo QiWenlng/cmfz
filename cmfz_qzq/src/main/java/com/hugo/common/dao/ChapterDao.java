@@ -7,7 +7,7 @@ import org.springframework.cache.annotation.Cacheable;
 import java.util.List;
 
 public interface ChapterDao extends BasicDao<Chapter> {
-    @Cacheable(value = "chaper", key = "#root.methodName")
+    @Cacheable(value = "baseCache", key = "#root.methodName")
     public List<Chapter> queryAll(@Param("begin") Integer begin, @Param("rows") Integer rows);
 
     @Cacheable(value = "baseCache", key = "#root.methodName")
@@ -16,7 +16,7 @@ public interface ChapterDao extends BasicDao<Chapter> {
     @Cacheable(value = "baseCache", key = "#root.methodName")
     public Integer count();
 
-    @Cacheable(value = "baseCache", key = "#root.methodName")
+    //@Cacheable(value = "baseCache", key = "#root.methodName")
     public Integer countByAlbum(String albumId);
 
     @Cacheable(value = "baseCache", key = "#root.methodName")

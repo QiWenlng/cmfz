@@ -1,6 +1,5 @@
 package com.hugo.back.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.hugo.back.service.AlbumService;
 import com.hugo.back.service.ChapterService;
 import com.hugo.common.entity.Album;
@@ -98,7 +97,7 @@ public class AlbumkController {
 
 
     /**
-     * 统计专辑章节人数
+     * 统计专辑章节数
      */
     @RequestMapping("/queryChapterCount")
     @ResponseBody
@@ -108,13 +107,12 @@ public class AlbumkController {
         //创建一个list集合用于存放专辑id
         List<String> albumids = new ArrayList<String>();
         //遍历章节，以获取每个章节的专辑id
-        for (Object chapter : chapters) {
-
-            String jsonObj = JSONObject.toJSONString(chapter);
-            Chapter stud = JSONObject.parseObject(jsonObj, Chapter.class);
+        for (Chapter chapter : chapters) {
+            //String jsonObj = JSONObject.toJSONString(chapter);
+            //Chapter stud = JSONObject.parseObject(jsonObj, Chapter.class);
             //判断list集合中专辑id是否重复，去重复
-            if (!albumids.contains(stud.getAlbumId())) {
-                albumids.add(stud.getAlbumId());
+            if (!albumids.contains(chapter.getAlbumId())) {
+                albumids.add(chapter.getAlbumId());
             }
         }
         Map<String, List<Object>> map = new HashMap<String, List<Object>>();
@@ -131,6 +129,9 @@ public class AlbumkController {
             Album album2 = albumService.queryOne(str);
             //把专辑名作为键，章节数量作为值存入map集合中
             map.get("albumName").add(album2.getAlbumName());
+            if (count == null) {
+                map.get("chapterSum").add(0);
+            }
             map.get("chapterSum").add(count);
         }
         return map;

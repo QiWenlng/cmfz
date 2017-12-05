@@ -184,7 +184,7 @@
 
     //处理搜索
     function query(value, name) {
-        $("#article").datagrid('load', '/homework_easyui_171111/emp/searcher?attribute=' + name + '&value=' + value);
+        $("#article").datagrid('load', '/cmfz/article/searcher?attribute=' + name + '&value=' + value);
     }
 
 </script>
@@ -209,9 +209,9 @@
     />
     <%--搜索关键字下拉菜单--%>
     <div id="articlemm" data-options="">
-        <div data-options="name:'name',">姓名</div>
-        <div data-options="name:'bir'">生日</div>
-        <div data-options="name:'id'">编号</div>
+        <div data-options="name:'title',">标题</div>
+        <div data-options="name:'publishDate'">出版日期</div>
+        <div data-options="name:'articleUrl'">内容</div>
     </div>
 </div>
 

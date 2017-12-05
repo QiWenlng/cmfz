@@ -13,4 +13,9 @@ public interface CounterDao extends BasicDao<Counter> {
     @Cacheable(value = "baseCache", key = "#root.methodName")
     public List<Counter> queryAll(@Param("begin") Integer begin, @Param("rows") Integer rows, @Param("hwId") String hwId);
 
+    @Cacheable(value = "baseCache", key = "#root.methodName")
+    public List<Counter> query(@Param("begin") Integer begin, @Param("rows") Integer rows);
+
+    @Cacheable(value = "baseCache", key = "#root.methodName")
+    public Integer countHw();
 }

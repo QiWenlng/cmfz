@@ -3,7 +3,7 @@
 <script>
     $(function () {
         $("#counter").datagrid({
-            url: '/cmfz/counter/query',
+            url: '/cmfz/counter/queryAll?phone=17611003900',
 
             striped: true,  //是否显示斑马线效果。
 

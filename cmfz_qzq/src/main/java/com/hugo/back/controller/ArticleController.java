@@ -61,4 +61,11 @@ public class ArticleController {
         Article article = articleService.queryOne(articleId);
         return article;
     }
+
+    @RequestMapping("/searcher")
+    @ResponseBody
+    public List<Article> searcher(String attribute, String value) {
+        List<Article> articles = articleService.searcher(attribute, value);
+        return articles;
+    }
 }

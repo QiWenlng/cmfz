@@ -17,4 +17,6 @@ public interface ArticleService {
     public List<Article> queryAll(Integer begin, Integer rows);
 
     public Integer count();
+
+    public List<Article> searcher(String attribute, String value);
 }

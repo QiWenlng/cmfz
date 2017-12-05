@@ -6,6 +6,9 @@ spring:
     encoding:
       charset: utf-8
       force: true
+#动态代理模式切换
+  aop:
+    proxy-target-class: true
 #配置jsp集成
   mvc:
     view:
@@ -20,7 +23,7 @@ spring:
     password: root
 #注入mapper文件
 mybatis:
-  mapper-locations: com/hugo/mapper/*.xml
+  mapper-locations: com/hugo/mapper/*DaoMapper.xml
   #为实体类设置别名
   type-aliases-package: com.hugo.common.entity
 #开启MyBatis的二级缓存
