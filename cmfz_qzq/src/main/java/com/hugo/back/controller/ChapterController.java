@@ -93,7 +93,7 @@ public class ChapterController {
     public Paging queryByAlbum(Integer rows, Integer page, String albumId) {
         //计算begin
         Integer begin = (page - 1) * rows;
-
+        System.out.println("6666666666666");
         List<Chapter> chapters = chapterService.queryByAlbum(begin, rows, albumId);
         Integer count = chapterService.countByAlbum(albumId);
         return new Paging(count, chapters);

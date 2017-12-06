@@ -213,7 +213,6 @@
     </dependencies>
     <build>
         <finalName>cmfz_qzq</finalName>
-
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -44,7 +44,7 @@
                 {
                     title: "操作", field: "options", width: 400, align: 'center',
                     formatter: function (value, row, index) {
-                        return "<a class='del' onclick=\"removealbum('" + row.albumId + "')\" data-options=\"plain:true,iconCls:'icon-20130408025545236_easyicon_net_30'\">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                        return "<a class='del' onclick=\"removeAlbum('" + row.albumId + "')\" data-options=\"plain:true,iconCls:'icon-20130408025545236_easyicon_net_30'\">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;" +
                             "<a class='del' onclick=\"openAlbumModifyDialog('" + row.albumId + "')\" data-options=\"plain:true,iconCls:'icon-edit'\">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;" +
                             "<a class='del' onclick=\"openChapterQueryDialog('" + row.albumId + "')\" data-options=\"plain:true,iconCls:'icon-edit'\">查看章节</a>";
                     }
